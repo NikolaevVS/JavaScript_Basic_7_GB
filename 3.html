@@ -24,8 +24,13 @@
    * @returns {number} - Набольшее число из набора цифр числа, переданного в
    * параметр "n"
    */
+  // 1 способ
   function descendingOrder(n) {
-
+    return +n.toString().split('').sort((a,b) => b - a).join('');
+  }
+  // 2 способ
+  function descendingOrder(n) {
+    return +Array.from(n.toString(), Number).sort((a, b) => b - a).join('');
   }
 
   console.log(descendingOrder(42145)); // 54421
